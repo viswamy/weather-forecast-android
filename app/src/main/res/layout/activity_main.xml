@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/background_image"
-    android:fitsSystemWindows="true"
-    tools:context="com.google.vswamy.weather_forecast_android.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/background_image"
+                android:fitsSystemWindows="true"
+                tools:context="com.google.vswamy.weather_forecast_android.MainActivity">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 android:text="Forecast Search"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </TableRow>
 
 
@@ -45,14 +45,14 @@
                 android:paddingTop="30dp"
                 android:text="Street"
                 android:textColor="@android:color/black"
-                android:textSize="25dp" />
+                android:textSize="25dp"/>
 
             <EditText
                 android:id="@+id/street_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight=".7"
-                android:inputType="text" />
+                android:inputType="text"/>
         </TableRow>
 
 
@@ -74,14 +74,14 @@
                 android:paddingTop="30dp"
                 android:text="City"
                 android:textColor="@android:color/black"
-                android:textSize="25dp" />
+                android:textSize="25dp"/>
 
             <EditText
                 android:id="@+id/city_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight=".7"
-                android:inputType="text" />
+                android:inputType="text"/>
         </TableRow>
 
 
@@ -103,10 +103,10 @@
                 android:paddingTop="30dp"
                 android:text="State"
                 android:textColor="@android:color/black"
-                android:textSize="25dp" />
+                android:textSize="25dp"/>
 
             <Spinner
-                android:id="@+id/planets_spinner"
+                android:id="@+id/state_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:entries="@array/states_array"/>
@@ -132,11 +132,11 @@
                 android:paddingTop="30dp"
                 android:text="Degree"
                 android:textColor="@android:color/black"
-                android:textSize="25dp" />
+                android:textSize="25dp"/>
 
 
             <RadioGroup
-                android:id="@+id/radioSex"
+                android:id="@+id/radioTemperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -145,13 +145,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@string/celsius" />
+                    android:text="@string/celsius"/>
 
                 <RadioButton
                     android:id="@+id/radioFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fahrenheit" />
+                    android:text="@string/fahrenheit"/>
             </RadioGroup>
         </TableRow>
 
@@ -167,14 +167,14 @@
 
             <Button
                 android:id="@+id/search"
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="Search"
                 />
             <Button
                 android:id="@+id/clear"
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="Clear"
                 />
         </TableRow>
@@ -196,9 +196,9 @@
                 android:paddingLeft="0dp"
                 android:paddingTop="30dp"
                 android:text="State"
-                android:visibility="invisible"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:visibility="invisible"/>
         </TableRow>
 
         <TableRow
@@ -210,20 +210,20 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-        <Button
-            android:id="@+id/about"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="About"
-            />
+            <Button
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/logo"
-        />
-    </TableRow>
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/logo"
+                />
+        </TableRow>
 
 
     </TableLayout>

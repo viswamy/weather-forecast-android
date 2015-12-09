@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/background_image"
-    android:fitsSystemWindows="true"
-    tools:context="com.google.vswamy.weather_forecast_android.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/background_image"
+                android:fitsSystemWindows="true"
+                tools:context="com.google.vswamy.weather_forecast_android.MainActivity">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -30,21 +30,21 @@
                 android:text="Name: Virupaksha Swamy"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="30dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </TableRow>
 
-    <TableRow>
-        <TextView
-            android:id="@+id/uscid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="75dp"
-            android:text="USCID: 8970852314"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-    </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/uscid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp"
+                android:text="USCID: 8970852314"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+        </TableRow>
     </TableLayout>
 </RelativeLayout>
