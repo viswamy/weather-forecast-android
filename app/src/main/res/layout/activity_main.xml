@@ -106,7 +106,7 @@
                 android:textSize="25dp" />
 
             <Spinner
-                android:id="@+id/planets_spinner"
+                android:id="@+id/state_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:entries="@array/states_array"/>
@@ -136,19 +136,19 @@
 
 
             <RadioGroup
-                android:id="@+id/radioSex"
+                android:id="@+id/radioTemperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/radioMale"
+                    android:id="@+id/celsius"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/celsius" />
 
                 <RadioButton
-                    android:id="@+id/radioFemale"
+                    android:id="@+id/fahrenheit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/fahrenheit" />
