@@ -1,6 +1,5 @@
 package com.google.vswamy.weather_forecast_android;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -17,13 +16,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import android.content.Intent;
-import android.widget.Toast;
 
-import com.google.vswamy.weather_forecast_android.helpers.WeatherHelperAsync;
 import com.google.vswamy.weather_forecast_android.helpers.WeatherInput;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -81,6 +77,7 @@ public class MainActivity extends AppCompatActivity
                         ((RadioGroup) findViewById(R.id.radioTemperature)).getCheckedRadioButtonId())
                                             ;
                 input.temperature = radioButton.getText().toString();
+                Log.d("temperature_unit", input.temperature);
                 String message = validate(input);
 
                 TextView textView = (TextView) findViewById(R.id.error_message);
@@ -113,14 +110,14 @@ public class MainActivity extends AppCompatActivity
                         in.close();
 
                         output = response.toString();
-                        Context context = getApplicationContext();
-                        CharSequence text = output;
-                        int duration = Toast.LENGTH_LONG;
 
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
-
-                        Log.d("data", output);
+                        Intent i = new Intent(MainActivity.this, ResultActivity.class);
+                        i.putExtra("jsonData", output);
+                        i.putExtra("streetAddress", input.streetAddress);
+                        i.putExtra("state", input.state);
+                        i.putExtra("temperature", input.temperature);
+                        i.putExtra("city", input.city);
+                        startActivity(i);
                     }
                     catch(Exception e)
                     {

@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/background_image"
-    android:fitsSystemWindows="true"
-    tools:context="com.google.vswamy.weather_forecast_android.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/background_image"
+                android:fitsSystemWindows="true"
+                tools:context="com.google.vswamy.weather_forecast_android.MainActivity">
 
-    <TableLayout
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:text="Name: Krupa Patel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/uscid"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="31dp"
+        android:text="USCID: 8178298454"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/person"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:src="@mipmap/person" />
 
-        <ImageView
-            android:id="@+id/person"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/person"
-            />
-
-        <TableRow>
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="75dp"
-                android:text="Name: Virupaksha Swamy"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-        </TableRow>
-
-    <TableRow>
-        <TextView
-            android:id="@+id/uscid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="75dp"
-            android:text="USCID: 8970852314"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-    </TableRow>
-    </TableLayout>
 </RelativeLayout>
