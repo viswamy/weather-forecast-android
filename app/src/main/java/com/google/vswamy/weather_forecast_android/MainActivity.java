@@ -151,10 +151,13 @@ public class MainActivity extends AppCompatActivity
 
     protected void temp()
     {
+        //No Initialization...
+        /*
         ((EditText) findViewById(R.id.street_input)).setText("720W 27TH ST");
         ((EditText) findViewById(R.id.city_input)).setText("Los Angeles");
         ((Spinner) findViewById(R.id.state_input)).setSelection(2);
         ((RadioButton)findViewById(R.id.fahrenheit)).setChecked(true);
+        */
     }
 
     @Override

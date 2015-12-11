@@ -75,6 +75,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
         ShareButton shareButton = (ShareButton)findViewById(R.id.fb_icon);
         shareButton.setShareContent(content);
+        shareButton.setBackgroundResource(R.mipmap.fb_icon);
+        shareButton.setText("");
+        shareButton.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
 
         //Register Events
         Button detailsButton = (Button) findViewById(R.id.detail);

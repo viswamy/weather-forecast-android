@@ -11,50 +11,48 @@
             android:id="@+id/map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="24dp"
-            android:layout_toRightOf="@+id/detail"
-            android:text="View Maps" />
+            android:text="View Maps"
+            android:layout_alignBottom="@+id/fb_icon" android:layout_centerHorizontal="true"/>
 
         <com.facebook.share.widget.ShareButton
             android:id="@+id/fb_icon"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="23dp"
-            android:layout_toRightOf="@+id/map"
+            android:layout_marginTop="40dp"
+
             android:scaleType="centerCrop"
-            android:src="@mipmap/fb_icon" />
+            android:src="@mipmap/fb_icon"
+            android:layout_marginRight="34dp" android:layout_marginEnd="34dp"
+            android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
         <Button
             android:id="@+id/detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/image"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:text="More Details" />
+            android:text="More Details"
+            android:layout_alignTop="@+id/map" android:layout_toLeftOf="@+id/map"
+            android:layout_toStartOf="@+id/map"/>
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/fb_icon"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginTop="24dp" android:layout_below="@+id/map"
+            android:layout_alignLeft="@+id/map" android:layout_alignStart="@+id/map"/>
 
         <TextView
             android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
             android:text="Clear in Los Angeles,CA"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="23dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="22dp"
+            android:layout_below="@+id/image" android:layout_centerHorizontal="true"/>
 
         <TextView
             android:id="@+id/temperature"
@@ -65,7 +63,7 @@
             android:layout_marginTop="17dp"
             android:text="68"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="50dp" />
+            android:textSize="40dp" />
 
         <TextView
             android:id="@+id/temp_degree"
@@ -75,7 +73,7 @@
             android:layout_toRightOf="@+id/temperature"
             android:text="F"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <TableLayout
             android:id="@+id/tableLayout1"
@@ -104,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -127,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -150,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -173,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -196,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -219,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -242,7 +240,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
             <TableRow
@@ -265,7 +263,7 @@
                     android:layout_height="wrap_content"
                     android:text="NA"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textSize="25dp" />
+                    android:textSize="22dp" />
             </TableRow>
 
 
@@ -278,11 +276,10 @@
             android:id="@+id/temp_lowhigh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/temp_degree"
-            android:layout_centerVertical="true"
             android:text="L:48|H:71"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25dp" />
+            android:textSize="20dp"
+            android:layout_below="@+id/temperature" android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 
