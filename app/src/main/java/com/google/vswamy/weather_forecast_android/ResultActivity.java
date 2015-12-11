@@ -67,7 +67,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         //Register Events
         Button detailsButton = (Button) findViewById(R.id.detail);
         detailsButton.setOnClickListener(this);
-
+        Button mapsButton = (Button) findViewById(R.id.map);
+        mapsButton.setOnClickListener(this);
     }
 
     private void displayWeatherInformation()
@@ -207,7 +208,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         }
         else if(v.getId() == R.id.map)
         {
-            Intent i = new Intent(ResultActivity.this, DetailsActivity.class);
+            Intent i = new Intent(ResultActivity.this, MyMapActivity.class);
             putExtras(i);
             ResultActivity.this.startActivity(i);
         }

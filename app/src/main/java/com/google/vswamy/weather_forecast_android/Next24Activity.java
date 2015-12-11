@@ -3,19 +3,16 @@ package com.google.vswamy.weather_forecast_android;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
-import android.widget.TableLayout.LayoutParams;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.google.vswamy.weather_forecast_android.R;
 import com.google.vswamy.weather_forecast_android.helpers.ImageSetterHelper;
 
 import java.text.SimpleDateFormat;

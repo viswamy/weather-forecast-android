@@ -1,5 +1,6 @@
 package com.google.vswamy.weather_forecast_android;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -89,15 +90,16 @@ public class MainActivity extends AppCompatActivity
                     try
                     {
                         String url = "http://weather-vswamy.elasticbeanstalk.com/second.php?sa=__SA__&city=__CITY__&state=__STATE__&temperature=__TEMPERATURE__";
+
                         url = url.replace("__SA__", input.streetAddress);
                         url = url.replace("__CITY__", input.city);
                         url = url.replace("__STATE__", input.state);
                         url = url.replace("__TEMPERATURE__", input.temperature);
+                        url = url.replace(" ", "%20");
 
                         URL obj = new URL(url);
                         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-                        int responseCode = con.getResponseCode();
+                        Log.d("vs_url", url);
                         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(con.getInputStream()));
                         StringBuffer response = new StringBuffer();
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity
                         in.close();
 
                         output = response.toString();
-
+                        Log.d("vs_output", output);
                         Intent i = new Intent(MainActivity.this, ResultActivity.class);
                         i.putExtra("jsonData", output);
                         i.putExtra("streetAddress", input.streetAddress);

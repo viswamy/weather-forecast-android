@@ -59,4 +59,5 @@
     <string name="celsius">Celsius</string>
     <string name="fahrenheit">Fahrenheit</string>
     <string name="facebook_app_id">737957306337609</string>
+    <string name="google_maps_key">AIzaSyASvzqpY85peuUwNR2sfNSvd85GZX_jWIo</string>
 </resources>
