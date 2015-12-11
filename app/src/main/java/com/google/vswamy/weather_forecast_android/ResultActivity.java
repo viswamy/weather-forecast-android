@@ -1,6 +1,7 @@
 package com.google.vswamy.weather_forecast_android;
 
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
@@ -17,6 +19,7 @@ import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareButton;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.vswamy.weather_forecast_android.helpers.ImageSetterHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,13 +56,20 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         Log.d("temperature_unit_ra", this.temperature);
 
         displayWeatherInformation();
+        Gson gson = new Gson();
+        JsonObject jsonObj = gson.fromJson(this.jsonData, JsonObject.class);
+        String imageUrl = "http://cs-server.usc.edu:45678/hw/hw8/images/" + jsonObj.get("currently").getAsJsonObject().get("icon").getAsString() + ".png";
+
+        Log.d("vs_imageurl", imageUrl);
 
         ShareButton imageButton = (ShareButton) findViewById(R.id.fb_icon);
         ShareLinkContent content = new ShareLinkContent.Builder()
                 .setContentUrl(Uri.parse("https://developers.facebook.com"))
-                .setContentTitle("this is title")
-                .setImageUrl(Uri.parse("https://icons.iconarchive.com/icons/yootheme/social-bookmark/256/social-facebook-button-blue-icon.png"))
-                .setContentDescription("this is description")
+                .setContentTitle("Current Weather in " + this.city + "," + this.state)
+                .setImageUrl(Uri.parse(imageUrl))
+                .setContentDescription("Forecast.io" + " , " + jsonObj.get("currently").getAsJsonObject().get("icon").getAsString() + ","
+                        + jsonObj.get("currently").getAsJsonObject().get("temperature").getAsString()
+                        + ((this.temperature.compareTo("Celsius")==0) ?  "C" : "F"))
                 .build();
         ShareButton shareButton = (ShareButton)findViewById(R.id.fb_icon);
         shareButton.setShareContent(content);
@@ -85,6 +95,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         TextView sunset = (TextView) findViewById(R.id.sunset); //Sunset
         TextView detail =  (TextView) findViewById(R.id.detail); //detail
         TextView summary =  (TextView) findViewById(R.id.summary); //detail
+        ImageView imageView = (ImageView) findViewById(R.id.image);
 
         TextView lowHighTemperature = (TextView) findViewById(R.id.temp_lowhigh);
 
@@ -93,6 +104,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         JsonObject currentlyObj = jsonObj.get("currently").getAsJsonObject();
         JsonObject  dailyObj = jsonObj.get("daily").getAsJsonObject();
         JsonObject dailyObj0 = dailyObj.getAsJsonArray("data").get(0).getAsJsonObject();
+
+        imageView.setImageResource(ImageSetterHelper.findImage(currentlyObj.get("icon").getAsString()));
 
         summary.setText(currentlyObj.get("summary").getAsString() + " in " + this.city + "," + this.state);
         String t_temperatureDegree = "N/A";

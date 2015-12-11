@@ -135,7 +135,18 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
+        final Button clear = (Button) findViewById(R.id.clear);
+        clear.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                ((EditText)findViewById(R.id.street_input)).setText("");
+                ((EditText)findViewById(R.id.city_input)).setText("");
+                ((Spinner) findViewById(R.id.state_input)).setSelection(0);
+                ((RadioButton)findViewById(R.id.fahrenheit)).setChecked(true);
+            }
+        });
     }
 
     protected void temp()
@@ -183,4 +194,6 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

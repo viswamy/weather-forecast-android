@@ -6,6 +6,9 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class DetailsActivity extends TabActivity
 {
@@ -46,7 +49,8 @@ public class DetailsActivity extends TabActivity
         // create the TabHost that will contain the Tabs
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 
-
+        TextView detailSummary = (TextView) findViewById(R.id.detail_summary);
+        detailSummary.setText("More Details" + this.city + "," + this.state);
         TabSpec tab1 = tabHost.newTabSpec("First Tab");
         TabSpec tab2 = tabHost.newTabSpec("Second Tab");
 
