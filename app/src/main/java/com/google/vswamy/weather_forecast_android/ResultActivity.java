@@ -58,7 +58,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         displayWeatherInformation();
         Gson gson = new Gson();
         JsonObject jsonObj = gson.fromJson(this.jsonData, JsonObject.class);
-        String imageUrl = "http://cs-server.usc.edu:45678/hw/hw8/images/" + jsonObj.get("currently").getAsJsonObject().get("icon").getAsString() + ".png";
+        String imageUrl = ImageSetterHelper.findImageUrl(jsonObj.get("currently").getAsJsonObject().get("icon").getAsString());
+
 
         Log.d("vs_imageurl", imageUrl);
 
@@ -71,6 +72,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                         + jsonObj.get("currently").getAsJsonObject().get("temperature").getAsString()
                         + ((this.temperature.compareTo("Celsius")==0) ?  "C" : "F"))
                 .build();
+
         ShareButton shareButton = (ShareButton)findViewById(R.id.fb_icon);
         shareButton.setShareContent(content);
 
